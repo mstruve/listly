@@ -1,39 +1,34 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = ListItem -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => ListItem %></h1>
+</div>
 
-<p>
-  <strong>List:</strong>
-  <%= @list_item.list %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:item_name) %></dt>
+      <dd><pre class="prettyprint"><%= @list_item.item_name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:description) %></dt>
+      <dd><pre class="prettyprint"><%= @list_item.description %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:size) %></dt>
+      <dd><pre class="prettyprint"><%= @list_item.size %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:number_wanted) %></dt>
+      <dd><pre class="prettyprint"><%= @list_item.number_wanted %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:store_name) %></dt>
+      <dd><pre class="prettyprint"><%= @list_item.store_name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:url) %></dt>
+      <dd><pre class="prettyprint"><%= @list_item.url %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Item name:</strong>
-  <%= @list_item.item_name %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              list_items_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_list_item_path(@list_item), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              list_item_path(@list_item),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @list_item.description %>
-</p>
-
-<p>
-  <strong>Size:</strong>
-  <%= @list_item.size %>
-</p>
-
-<p>
-  <strong>Number wanted:</strong>
-  <%= @list_item.number_wanted %>
-</p>
-
-<p>
-  <strong>Store name:</strong>
-  <%= @list_item.store_name %>
-</p>
-
-<p>
-  <strong>Url:</strong>
-  <%= @list_item.url %>
-</p>
-
-<%= link_to 'Edit', edit_list_item_path(@list_item) %> |
-<%= link_to 'Back', list_items_path %>
