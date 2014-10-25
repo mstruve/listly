@@ -1,0 +1,17 @@
+<%= simple_form_for(@list_item) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :list %>
+    <%= f.input :item_name %>
+    <%= f.input :description %>
+    <%= f.input :size %>
+    <%= f.input :number_wanted %>
+    <%= f.input :store_name %>
+    <%= f.input :url %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

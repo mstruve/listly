@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>List:</strong>
+  <%= @list_item.list %>
+</p>
+
+<p>
+  <strong>Item name:</strong>
+  <%= @list_item.item_name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @list_item.description %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @list_item.size %>
+</p>
+
+<p>
+  <strong>Number wanted:</strong>
+  <%= @list_item.number_wanted %>
+</p>
+
+<p>
+  <strong>Store name:</strong>
+  <%= @list_item.store_name %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @list_item.url %>
+</p>
+
+<%= link_to 'Edit', edit_list_item_path(@list_item) %> |
+<%= link_to 'Back', list_items_path %>
