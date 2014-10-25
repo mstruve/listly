@@ -1,4 +1,5 @@
 ActiveAdmin.register ListItem do
+  permit_params :item_name, :description, :size, :number_wanted, :store_name, :url
 
 
   # See permitted parameters documentation:
