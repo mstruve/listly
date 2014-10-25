@@ -240,4 +240,5 @@ ActiveAdmin.setup do |config|
   #
   # config.filters = true
 
+  config.comments_registration_name = "AdminComment"
 end
