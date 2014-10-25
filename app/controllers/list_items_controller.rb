@@ -1,5 +1,5 @@
 class ListItemsController < ApplicationController
-  before_action :set_list_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_list_item, only: [:show, :edit, :update, :destroy, :vote]
 
   # GET /list_items
   # GET /list_items.json
