@@ -1,4 +1,5 @@
 ActiveAdmin.register List do
+  permit_params :name, :description, :list_type
 
 
   # See permitted parameters documentation:
