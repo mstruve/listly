@@ -1,6 +1,5 @@
-<h1>Editing list</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @list %> |
-<%= link_to 'Back', lists_path %>
+<%- model_class = List -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => List %></h1>
+</div>
+<%= render :partial => 'form' %>
