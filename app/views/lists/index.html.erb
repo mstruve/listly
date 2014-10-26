@@ -5,22 +5,16 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>ID</th>
       <th><%= model_class.human_attribute_name(:name) %></th>
-      <th><%= model_class.human_attribute_name(:description) %></th>
-      <th><%= model_class.human_attribute_name(:list_type) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%= model_class.human_attribute_name(:updated_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @lists.each do |list| %>
       <tr>
-        <td><%= list.id %></td>
-        <td><%= list.name %></td>
-        <td><%= list.description %></td>
-        <td><%= list.list_type %></td>
-        <td><%=l list.created_at, format: :long %></td>
+        <td><%= link_to list.name, list_path(list) %></td>
+        <td><%=l list.updated_at, format: :long %></td>
         <td>
           <%= link_to list_path(list), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
             <%= glyph 'info-sign' %>
