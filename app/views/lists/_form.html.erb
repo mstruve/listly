@@ -1,4 +1,4 @@
-<%= form_for @list, :html => { :class => 'form-horizontal form-model' } do |f| %>
+<%= simple_form_for @list, :html => { :class => 'form-horizontal form-model', :multipart => true } do |f| %>
   <div class="form-group">
     <%= f.label :name, :class => 'control-label col-md-2' %>
     <div class="col-md-10">
@@ -17,6 +17,12 @@
       <%= f.text_field :list_type, :class => 'text-field form-control' %>
     </div>
   </div>
+
+  <%= f.fields_for :list_items do |li| %>
+    <%= render 'list_item_fields', f: li %>
+  <% end %>
+
+  <%= link_to_add_fields "Add Item", f, :list_items %>
 
   <div class="form-group">
     <div class='col-md-offset-2 col-md-10'>

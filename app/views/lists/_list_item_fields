@@ -1,0 +1,12 @@
+<div class="well form-inline">
+	<div id="list_items">
+	<div id="destroy">
+	<%= f.check_box :_destroy %>
+	 <%= f.label :_destroy, "Remove Job" %>
+	</div>
+	  <h4>Item</h4> 
+	 <br />
+	  	<%= f.input :item_name %>
+		<%= f.input :description %>
+    </div>
+</div>
